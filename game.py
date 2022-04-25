@@ -371,8 +371,8 @@ if __name__ == "__main__":
     root.geometry("500x550")
     root.title("Connect 4 AI Bot")
     root.configure(bg="white")
-    root.minsize(500, 600)
-    root.maxsize(500, 600)
+    root.minsize(500, 700)
+    root.maxsize(500, 700)
 
     info = Info(root)
     info.grid(row=0, column=0)
@@ -402,5 +402,10 @@ if __name__ == "__main__":
     Button(root, text="Step back", command=step_back).grid(
         row=2, column=0, pady=2)
     Button(root, text="Exit", command=close).grid(row=4, column=0, pady=2)
+
+    slider_label = Label(root, text="Depth of search").grid(
+		row=5, column=0)
+    difficultySlider = Scale(root, from_=0, to=100, orient='horizontal').grid(
+        row=5, column=0, pady=2)
 
     root.mainloop()
