@@ -145,7 +145,7 @@ class Node():
         return False
 
 
-def MTCS(maxIter, root, factor):
+def MCTS(maxIter, root, factor):
     for inter in range(maxIter):
         front, turn = treePolicy(root, 1, factor)
         reward = defaultPolicy(front.state, turn)
@@ -153,8 +153,6 @@ def MTCS(maxIter, root, factor):
 
     ans = bestChild(root, 0)
     print(f"Difficult value: {value}")
-
-    # print([(c.reward/c.visits) for c in ans.parent.children])
     return ans
 
 
@@ -303,7 +301,7 @@ class Terrain(Canvas):
     def findBestMove(self, factor):
         # Returns the best move using MonteCarlo Tree Search
         o = Node(self.b)
-        bestMove = MTCS(value, o, factor)  ##TODO
+        bestMove = MCTS(value, o, factor)
         self.b = copy.deepcopy(bestMove.state)
 
         self.reloadBoard()
@@ -443,5 +441,4 @@ if __name__ == "__main__":
     menu = OptionMenu(root, valueStr, *options_list, command = setValue).grid(
         row = 3, column = 0)
 
-    print(value)
     root.mainloop()
