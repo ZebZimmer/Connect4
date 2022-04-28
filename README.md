@@ -8,8 +8,6 @@ Changes include:
 - TBD: Adding toggle for who starts
 - TBD: Start features
 - TBD: Adding a difficulty setting
-- TBD: AI agents using different search depths playing each other
-- TBD: Automated playing of AI agents to gather trend data
 
 <p align="center">
   <img src="https://github.com/Alfo5123/Connect4/blob/master/img/game_example.gif" width="350"/>  

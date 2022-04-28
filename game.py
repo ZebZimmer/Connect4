@@ -9,9 +9,19 @@ import random
 import math
 import copy
 import time
+from tkinter.ttk import Combobox
 
 dx = [1, 1,  1,  0]
 dy = [1, 0,  -1,  1]
+
+# Global values, is the number of iterations for each difficulty level
+easy = 3000
+medium = 5000
+hard = 7000
+
+# File writing for data colleciton
+f = open("results.txt", "a")
+f.write("#: ")
 
 # Game basic dynamics
 
@@ -142,6 +152,8 @@ def MTCS(maxIter, root, factor):
         backup(front, reward, turn)
 
     ans = bestChild(root, 0)
+    print(f"Difficult value: {value}")
+
     # print([(c.reward/c.visits) for c in ans.parent.children])
     return ans
 
@@ -291,7 +303,7 @@ class Terrain(Canvas):
     def findBestMove(self, factor):
         # Returns the best move using MonteCarlo Tree Search
         o = Node(self.b)
-        bestMove = MTCS(3000, o, factor)
+        bestMove = MTCS(value, o, factor)  ##TODO
         self.b = copy.deepcopy(bestMove.state)
 
         self.reloadBoard()
@@ -331,6 +343,7 @@ class Terrain(Canvas):
 
         self.update()
 
+        timeStart = time.perf_counter()
         # Computer Action
         if not self.winner:
 
@@ -354,11 +367,17 @@ class Terrain(Canvas):
                 self.winner = True
 
         self.update()
+        timeEnd = time.perf_counter()
+        print(f"{timeEnd - timeStart:0.4f} seconds")
+        f.write(f"{timeEnd - timeStart:0.4f} seconds")
 
     def step_back(self):
         """
         Single human and computer step back
         """
+        if(self.winner == True):
+            print("overtime redo")
+        
         self.winner = False
         info.t.config(text="Your turn")
         self.reloadBoard(bstate=self.last_bstate)
@@ -380,6 +399,8 @@ if __name__ == "__main__":
     t = Terrain(root)
     t.grid(row=1, column=0)
 
+    value = 3000
+
     def restart():
         global info
         info.t.config(text="")
@@ -396,16 +417,31 @@ if __name__ == "__main__":
 
     def close():
         root.destroy()
+    
+    def setValue(input):
+        print(input)
+        global value
+        if (input == "Easy"):
+            value = easy
+        elif (input == "Medium"):
+            value = medium
+        elif (input == "Hard"):
+            value = hard
 
     Button(root, text="Try again (?)", command=restart).grid(
-        row=3, column=0, pady=5)
+        row=5, column=0, pady=5)
     Button(root, text="Step back", command=step_back).grid(
-        row=2, column=0, pady=2)
-    Button(root, text="Exit", command=close).grid(row=4, column=0, pady=2)
+        row=4, column=0, pady=2)
+    Button(root, text="Exit", command=close).grid(row=6, column=0, pady=2)
 
     slider_label = Label(root, text="Depth of search").grid(
-		row=5, column=0)
-    difficultySlider = Scale(root, from_=0, to=100, orient='horizontal').grid(
-        row=5, column=0, pady=2)
+        row=2, column=0)
 
+    valueStr = StringVar()
+    options_list = ["Easy", "Medium", "Hard"]
+    valueStr.set("Select difficulty")
+    menu = OptionMenu(root, valueStr, *options_list, command = setValue).grid(
+        row = 3, column = 0)
+
+    print(value)
     root.mainloop()

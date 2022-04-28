@@ -1,0 +1,14 @@
+Easy:
+1: 2.4924 seconds2.4186 seconds2.3274 seconds2.0499 seconds2.0128 seconds1.6479 seconds1.6325 seconds1.1790 seconds0.9592 seconds0.1294 seconds
+2: 2.6284 seconds2.4131 seconds2.3191 seconds2.1069 seconds1.9531 seconds1.6854 seconds1.4211 seconds1.3259 seconds0.9972 seconds0.9672 seconds0.7217 seconds0.6522 seconds0.4992 seconds0.3074 seconds0.2428 seconds0.2195 seconds0.2246 seconds0.1084 seconds
+3: 2.5211 seconds2.3872 seconds2.3194 seconds2.1589 seconds1.9033 seconds2.0094 seconds1.9202 seconds1.9054 seconds1.7432 seconds1.5113 seconds1.4069 seconds1.1047 seconds0.9947 seconds0.6624 seconds0.6136 seconds0.5230 seconds0.3108 seconds0.2123 seconds0.1787 seconds0.1098 seconds
+
+Medium:
+1: 5.7623 seconds4.0931 seconds3.8214 seconds3.6175 seconds2.6013 seconds2.6979 seconds2.6685 seconds3.1652 seconds2.5264 seconds2.5813 seconds2.2419 seconds1.7599 seconds1.2511 seconds1.1403 seconds0.6302 seconds0.4862 seconds0.3116 seconds0.2100 seconds0.1048 seconds
+2: 4.2146 seconds3.9504 seconds3.3938 seconds2.8509 seconds2.4894 seconds2.0621 seconds1.7896 seconds1.8344 seconds1.6558 seconds1.6819 seconds1.6271 seconds1.2635 seconds1.2016 seconds0.4864 seconds0.3397 seconds0.2805 seconds0.1121 seconds
+3: 4.1507 seconds4.0083 seconds3.9607 seconds4.0119 seconds3.3417 seconds2.8072 seconds2.6891 seconds2.4751 seconds2.1801 seconds2.3244 seconds1.0025 seconds0.1769 seconds
+
+Hard:
+1: 5.9272 seconds6.1501 seconds5.3598 seconds5.2582 seconds5.0334 seconds4.3212 seconds3.8259 seconds3.7626 seconds3.1693 seconds2.2842 seconds2.2469 seconds2.0550 seconds1.1018 seconds0.6117 seconds0.5200 seconds0.4531 seconds0.2498 seconds0.0001 seconds
+2: 5.6486 seconds5.3939 seconds5.3433 seconds5.2717 seconds4.6692 seconds4.1474 seconds3.7901 seconds2.9355 seconds2.2853 seconds2.0252 seconds2.0830 seconds0.2974 seconds
+3:5.7650 seconds4.7804 seconds4.8046 seconds6.1122 seconds3.7337 seconds3.4949 seconds2.9595 seconds2.8372 seconds2.4258 seconds1.9582 seconds1.5730 seconds1.1746 seconds0.7418 seconds0.5949 seconds0.5002 seconds0.3969 seconds0.2323 seconds
